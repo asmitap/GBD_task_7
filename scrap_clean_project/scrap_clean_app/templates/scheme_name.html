@@ -1,0 +1,55 @@
+{% extends 'header.html' %}
+{% block content %}
+{% load static %}
+
+{% for scheme_name in schemes_name %}
+<div class="accordion" id="accordion1">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo" style="text-decoration:none; color:black">
+        <b>Scheme Name : {{scheme_name.schema_name}}</b>
+        <button>Click here to see more items</button>
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+
+        <!-- Here we insert another nested accordion -->
+        {% for category_name in categorys_name %}
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerOne" style="text-decoration:none; color:black">
+                Category Name : {{category_name.category_name}}<br>
+                <!-- Parent Xpath : {{category_name.parent_xpath}} -->
+              </a>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Field name</th>
+                  <th scope="col">xpath</th>
+                </tr>
+              </thead>
+
+              {% for content in contents %}
+              {% if content.category == category_name %}
+              <tbody>
+                <div id="collapseInnerOne" class="accordion-body collapse in">
+                  <div class="accordion-inner">
+                    <tr>
+                      <td>{{content.field_name}}</td>
+                      <td>{{content.xpath}}</td>
+                    </tr>
+              </tbody>
+
+              {% endif %}
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endblock %}

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title></title>
+        {% load static %}
+        {% load bootstrap4 %}
+        {% bootstrap_messages %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">ScrapClean</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{% url 'index' %}">Upload Json<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{% url 'upload' %}">Upload Csv_Json</a>
+                <a class="nav-item nav-link" href="{% url 'listconfig' %}">View Scheme</a>
+                <a class="nav-item nav-link" href="{% url 'view_schemename' %}">List Config</a>
+                <a class="nav-item nav-link" href="{% url 'editconfig' %}">Edit Config</a>
+              </div>
+            </div>
+          </nav>
+
+
+
+
+
+        {% block content %}
+        {% endblock %}
+
+    </body>
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+</html>

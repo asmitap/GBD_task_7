@@ -1,0 +1,51 @@
+{
+  "name": "amazon",
+  "parent_content": [
+    {
+      "category": "organic",
+      "parent_xpath": "//div[contains(@cel_widget_id,'MAIN-SEARCH_RESULTS')]",
+      "content": [
+        {
+          "field": "title",
+          "xpath": "//h2"
+        },
+        {
+          "field": "rating",
+          "xpath": "//i/span"
+        },
+        {
+          "field": "rating_count",
+          "xpath": "//span[@aria-label]/a/span"
+        },
+        {
+          "field": "price",
+          "xpath": "//span[contains(@class,'a-price')][not(contains(@data-a-strike,'true'))]/span[contains(@class,'a-offscreen')]"
+        }
+      ]
+    },
+    {
+      "category": "related_brand",
+      "parent_xpath": "//div[contains(@cel_widget_id,'MAIN-SEARCH_RESULTS')]",
+      "content": [
+        {
+          "field": "title",
+          "xpath": "//h2"
+        },
+        {
+          "field": "rating",
+          "xpath": "//i/span"
+        },
+        {
+          "field": "rating_count",
+          "xpath": "//span[@aria-label]/a/span"
+        },
+        {
+          "field": "price",
+          "xpath": "//span[contains(@class,'a-price')][not(contains(@data-a-strike,'true'))]/span[contains(@class,'a-offscreen')]"
+        }
+      ]
+    }
+    
+
+  ]
+}

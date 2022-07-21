@@ -1,0 +1,31 @@
+{% extends 'header.html' %}
+{% block content %}
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Scheme Name</th>
+        <th scope="col">View</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for scheme_name in schemes_name %}
+        <tr>
+            <td>
+                <ol>
+                    <li>
+                        {{scheme_name.schema_name}}
+                    </li>
+                </ol>
+            </td>
+            <td><button><a class="nav-item nav-link" href="{% url 'view_schemename' %}">List Config</a></button></td>
+            <td><button><a class="nav-item nav-link" href="{% url 'editconfig' %}">Edit Config</a></button></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+{% endblock %}
